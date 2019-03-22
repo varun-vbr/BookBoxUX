@@ -1,6 +1,7 @@
     bookBoxApp.config(function($routeProvider, $locationProvider){
 
-        $routeProvider.when("/", {
+        $routeProvider
+        .when("/", {
             templateUrl: "/app/components/anonymousHomePage/anonymousHomePage.html",
             controller:"anonymousHomeCtrl"
         })
