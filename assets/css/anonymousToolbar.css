@@ -1,0 +1,45 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 1 Sep, 2018, 2:37:07 PM
+    Author     : varun
+*/
+.headerToolbar{
+    background-color:#666666;
+    height: 50px;
+}
+
+#bookboxlogo{
+    margin-left:20px;
+    margin-top:4px;
+}
+
+#signIn{
+    margin-right: 35px;
+    margin-top: 10px;
+}
+
+#catDropdown{
+    margin-right: 80px;
+    margin-top: 10px;
+}
+
+#catIco{
+   margin-top: 8px;  
+}
+
+.menuDropDown{
+    background-color:#666666;
+}
+.menu-item{
+    color: #CBD9EF;
+    font-size: 12px;
+}
+.menu-item:hover{
+    color: black;
+    font-size: 12px;
+    font-weight:bold;
+    }

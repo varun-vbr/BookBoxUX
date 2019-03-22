@@ -1,0 +1,87 @@
+    <!DOCTYPE html>
+    <!--
+    To change this license header, choose License Headers in Project Properties.
+    To change this template file, choose Tools | Templates
+    and open the template in the editor.
+    -->
+    <html>
+        <head>
+          <style>
+
+         .slick-slide {
+          margin: 0px 20px;
+          background:#F2F2F2;
+        }     
+
+        .slick-prev:before,
+        .slick-next:before {
+          color: #28a745;
+        }
+        .slick-slide img {
+          width: 75%;
+
+        }
+
+        .truncate{
+            width: 200px;
+            display:block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+          </style>
+
+        </head>
+        <body>
+            <ng-include src="'/app/shared/anonymousToolbar/anonymousToolbar.html'"></ng-include>
+            <search-box selected-type="selectedType" search-text="searchText" selected-item="selectedItem"></search-box>
+         <script type="text/ng-template" id="tpl.html">
+                        <a href=""  style="text-decoration: none;" ng-click="goToAnonymousBookPage(item)">
+                            <div class="d-flex justify-content-center" style="margin-top:25px;">
+                             <img alt="category1" ng-src="/assets/img/bookCovers{{item.localImageUrl}}" height="250">
+                            </div>
+                              <div  style="margin-left:25px; margin-right:25px; margin-top:10px;margin-bottom:10px;" >
+                                 <span class="truncate" style="color:black; font-weight:bold">{{item.title}}</span>
+                                 <md-tooltip md-direction="bottom">{{item.title}}</md-tooltip>
+                             </div>
+                             <div  style="margin-bottom:25px;margin-left:25px; margin-right:25px;">
+                                 <span style="color:#3B3A3A; font-size:small">{{item.author}}</span>
+                             </div>
+                          </a>
+        </script>
+
+        <h3 style="margin-left:25px;margin-top:25px;color:#666666;font-weight:bold;">Popular Books</h3>
+        <h6 style="margin-left:25px;margin-bottom:25px;color:#666666;">Keep pace with your peers. Browse the most-viewed books.</h6>
+         <div class="container" >
+             <slick infinite=false slides-to-show=4 slides-to-scroll=4 dots=false arrows=true lazyLoad=progressive ng-if="booksLoaded">
+                 <div ng-repeat="item in popularBooks">
+                     <div class="" ng-include="'tpl.html'" >
+
+                     </div>
+                 </div>
+             </slick>
+         </div>
+        <h3 style="margin-left:25px;margin-top:25px;color:#666666;font-weight:bold;">Recently Added</h3>
+        <h6 style="margin-left:25px;margin-bottom:25px;color:#666666;">Never miss a release. View all the latest titles that we’ve added.</h6>
+        <div class="container" >
+             <slick infinite=false slides-to-show=4 slides-to-scroll=4 dots=false arrows=true lazyLoad=progressive ng-if="booksLoaded">
+                 <div ng-repeat="item in newBooks">
+                     <div class="" ng-include="'tpl.html'" >
+
+                     </div>
+                 </div>
+             </slick>
+         </div>
+        <h3 style="margin-left:25px;margin-top:25px;color:#666666;font-weight:bold;">Trending Books</h3>
+        <h6 style="margin-left:25px;margin-bottom:25px;color:#666666;">See what others are reading. Explore our most popular titles.</h6>
+        <div class="container">
+             <slick infinite=false slides-to-show=4 slides-to-scroll=4 dots=false arrows=true lazyLoad=progressive ng-if="booksLoaded">
+                 <div ng-repeat="item in trendingBooks">
+                     <div class="" ng-include="'tpl.html'" >
+
+                     </div>
+                 </div>
+             </slick>
+         </div>
+        </body>
+    </html>

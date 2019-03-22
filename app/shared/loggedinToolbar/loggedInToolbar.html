@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="/BookBox/assets/libs/angular/angular.js"></script>
+        <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="/BookBox/assets/libs/bootstrap/bootstrap.js"></script>
+        <link href="/BookBox/assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+        <script src="/BookBox/shared/loggedInToolbar/loggedInToolbar.js"></script>
+        <link href="/BookBox/assets/css/bookboxglobal.css" rel="stylesheet" type="text/css" />
+        <link href="/BookBox/assets/css/anonymousToolbar.css" rel="stylesheet" type="text/css" />
+        <link href="/BookBox/assets/css/loggedinToolbar.css" rel="stylesheet" type="text/css" />
+        
+    </head>
+    <body class="h-100">
+        <div class="headerToolbar row">
+           <div class="col-xs-3">
+              <img id="bookboxlogo" src="/BookBox/assets/img/logos/bookbox_logo2.png" class="img-responsive" width="134" height="42" >
+          </div>
+            <div class="col-xs-1 ml-auto">
+                <div class="dropdown">  
+              <img id="catIco" data-toggle="dropdown" src="/BookBox/assets/img/icons/Categories.png" class="img-responsive bb-img-hov" width="32" height="32" >
+              <div class="dropdown-menu menuDropDown">
+                     <a class="dropdown-item menu-item" href="#">Action and Adventure</a>
+                     <a class="dropdown-item menu-item" href="#">Autobiographies and Biographies</a>
+                     <a class="dropdown-item menu-item" href="#">Business and Economics</a>
+                     <a class="dropdown-item menu-item" href="#">Computing</a>
+                     <a class="dropdown-item menu-item" href="#">Healthy Living</a>
+                     <a class="dropdown-item menu-item" href="#">Humour</a>
+                     <a class="dropdown-item menu-item" href="#">Personal Development</a>
+                     <a class="dropdown-item menu-item" href="#">Romance</a>
+                     <a class="dropdown-item menu-item" href="#">Science and Technology</a>
+                     <a class="dropdown-item menu-item" href="#">Science Fiction</a>
+                     <a class="dropdown-item menu-item" href="#">Sports</a>
+                     <a class="dropdown-item menu-item" href="#">Travel</a>
+                 </div>
+                </div>
+          </div>
+            <div class="col-xs-1">
+                <div class="dropdown">
+                <a id="catDropdown" href="#" class="float-right bb-header-hyperlinks dropdown-toggle" data-toggle="dropdown">Categories</a>  
+                 <div class="dropdown-menu menuDropDown">
+                     <a class="dropdown-item menu-item" href="#">Action and Adventure</a>
+                     <a class="dropdown-item menu-item" href="#">Autobiographies and Biographies</a>
+                     <a class="dropdown-item menu-item" href="#">Business and Economics</a>
+                     <a class="dropdown-item menu-item" href="#">Computing</a>
+                     <a class="dropdown-item menu-item" href="#">Healthy Living</a>
+                     <a class="dropdown-item menu-item" href="#">Humour</a>
+                     <a class="dropdown-item menu-item" href="#">Personal Development</a>
+                     <a class="dropdown-item menu-item" href="#">Romance</a>
+                     <a class="dropdown-item menu-item" href="#">Science and Technology</a>
+                     <a class="dropdown-item menu-item" href="#">Science Fiction</a>
+                     <a class="dropdown-item menu-item" href="#">Sports</a>
+                     <a class="dropdown-item menu-item" href="#">Travel</a>
+                 </div>
+                </div>
+            </div>
+            <div class="col-xs-1">
+                <a id="signIn" href="#" class="float-right bb-header-hyperlinks">Sign In</a>    
+            </div>
+            
+        </div>
+        <div id="navBarParent" class="row" style="height:1500px;">
+         <div id="navwrapper" class="navIco">   
+           <nav id="sidenav">
+            <ul class="list-unstyled components">
+                <li> <a href="#" ><img src="/BookBox/assets/img/icons/home.png" width="32" height="32"/></a> </li>
+                <li>  <a href="#" ><img src="/BookBox/assets/img/icons/Categories.png" width="32" height="32"/></a> </li>
+                <li> <a href="#" ><img src="/BookBox/assets/img/icons/playlist.png" width="32" height="32"/></a> </li>
+                <li><a href="#" ><img src="/BookBox/assets/img/icons/history.png" width="32" height="32"/></a> </li>
+                <li><a href="#" ><img src="/BookBox/assets/img/icons/settings.png" width="32" height="32"/></a> </li>
+                <li><a href="#" ><img src="/BookBox/assets/img/icons/billing.png" width="32" height="32"/></a> </li>
+                
+            </ul>
+        </nav>
+         </div>
+          <div id="navContentWrapper" class="navIco">   
+           <nav id="sidenavContent" class="navContent">
+            <ul class="list-unstyled components">
+                <li><a href="#" >BookBox Home</a></li>
+                <li><a href="#" >Categories</a></li>
+                <li><a href="#" >Playlists</a></li>
+                <li><a href="#" >History</a></li>
+                <li><a href="#" >Settings</a></li>
+                <li><a href="#" >Billing</a></li>
+                <li><a href="#" >Sign Out</a></li>
+            </ul>
+        </nav>
+         </div>  
+        </div> 
+        
+        <script>
+            $(".navIco").hover(function () {
+    $("#sidenavContent").removeClass("navContent");            
+    $("#sidenavContent").addClass("navContentHover");
+  },
+  function () {
+    $("#sidenavContent").removeClass("navContentHover");  
+    $("#sidenavContent").addClass("navContent");
+  });
+        </script>
+    </body>
+</html>

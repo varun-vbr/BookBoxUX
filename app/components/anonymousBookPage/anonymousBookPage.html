@@ -1,0 +1,104 @@
+ <!DOCTYPE html>
+    <!--
+    To change this license header, choose License Headers in Project Properties.
+    To change this template file, choose Tools | Templates
+    and open the template in the editor.
+    -->
+    <html>
+        <head>
+            <style>
+                .bookContainer{
+                    margin:20px;
+                    background:#F2F2F2;
+                }
+                .bookTitle{
+                    font-weight: bold;
+                }
+                .bookLabel{
+                    color:#666666; 
+                }
+                .bookImg{
+                    margin:20px;
+                }
+                .detailsCol{
+                    margin-top: 20px;
+                }
+                .readButton{
+                    color:white;
+                    width:280px;
+                }
+                .read-button-col{
+                    margin:20px
+                }
+                .book-description{
+                    margin-bottom: 20px;
+                    margin-left: 20px;
+                    margin-right: 20px;
+                }
+                .links{
+                    color:#FA551B;
+                }
+                .links:hover{
+                    color:#FA551B;
+                }
+                
+                .review{
+                    margin-top: 5px;
+                    margin-left: 5px;
+                    display: inline-block;
+                }
+                
+                
+            </style>
+        </head>
+        <body>
+            <ng-include src="'/app/shared/anonymousToolbar/anonymousToolbar.html'"></ng-include>
+            <search-box selected-type="selectedType" search-text="searchText" selected-item="selectedItem"></search-box>
+            <div class="container bookContainer">
+                <div class="row">
+                    <div class="col-sm-2 bookImg">
+                        <div class="d-flex justify-content-center">
+                            <img alt="selectedBook" ng-src="/assets/img/bookCovers{{bookOnDisplay.localImageUrl}}" height="250" > 
+                        </div>
+                         
+                    </div>
+                    <div class="col-sm-6 detailsCol">
+                        <div class="row">
+                            <h3 class="bookTitle">{{bookOnDisplay.title}}</h3>
+                        </div> 
+                         <div class="row">
+                             <star-rating max="5" rating-value="rating" read-only="true"></star-rating>
+                             <span><a href="" class="links review">0 Reviews</a></span>
+                        </div>
+                         <div class="row">
+                             <h6 class="bookLabel">By:</h6>
+                             <span><a href="" class="links">{{bookOnDisplay.author}}</a></span>
+                        </div>
+                         <div class="row">
+                             <h6 class="bookLabel">Publisher:</h6>
+                             <span><a href="" class="links">{{bookOnDisplay.publisher}}</a></span>
+                        </div>
+                         <div class="row">
+                             <h6 class="bookLabel">Category:</h6>
+                             <span><a href="" class="links">{{bookOnDisplay.categoryId.categoryName}}</a></span>
+                        </div>
+                         <div class="row">
+                             <h6 class="bookLabel">Read by {{bookOnDisplay.readCount}} readers</h6>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 read-button-col">
+                        <div>
+                            <a href="" class="btn btn-success readButton">START READING NOW</a>    
+                        </div> 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="book-description">
+                        <h5 class="bookLabel">Book Description</h5>
+                        <p>{{bookOnDisplay.description}}</p>
+                    </div>
+                </div>
+            </div>
+            
+        </body>
+    </html>

@@ -1,0 +1,31 @@
+engines:
+  rubocop:
+    enabled: true
+    checks:
+    	Rubocop/Metrics/ClassLength:
+      	enabled: false
+  eslint:
+    enabled: true
+  csslint:
+    enabled: true
+ratings:
+   paths:
+   - "src/**/*"
+exclude_paths:
+- ".idea/"
+- "chore/"
+- "dist/"
+- "examples/"
+- "resources/"
+- ".gitignore"
+- ".npmignore"
+- ".travis.yml"
+- "*.json"
+- "*.md"
+- "gulpfile.js"
+- "karma.config.js"
+- "webpack.config.js"
+- "LICENSE"
+
+
+

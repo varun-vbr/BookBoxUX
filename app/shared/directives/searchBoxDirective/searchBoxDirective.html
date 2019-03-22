@@ -1,0 +1,39 @@
+    <div class='d-flex justify-content-center'>
+             <div class="row" > 
+              <md-select ng-style="{'height':'42px','border':'1px solid #CCCCCC','background':'#f2f2f2'}" ng-model="selectedType" placeholder="Type" required md-no-asterisk="false"
+                          >
+              <md-option value="Title">Title</md-option>
+              <md-option value="Author">Author</md-option>
+              <md-option value="Publisher">Publisher</md-option>
+            </md-select>     
+            <div ng-style="{'width':'600px','margin-top':'20px'}">
+
+          <!-- <form name="autocompleteForm"> -->
+            <md-autocomplete
+                      md-search-text-change="querySearch(searchText, selectedType)"
+                      ng-disabled = "false"
+                      md-no-cache = "true"
+                      md-selected-item = "selectedItem"
+                      md-selected-item-change="selectedItemChanged(selectedItem)"
+                      md-search-text = "searchText"
+                      md-items = "item in searchResult"
+                      md-item-text = "item.title"
+                      md-min-length = "4"
+                      placeholder = "Type to search">
+
+                      <md-item-template>
+                         <span md-highlight-text = "searchText"
+                            md-highlight-flags = "^i">{{item.title}}</span>
+                      </md-item-template>
+                <div ng-messages="searchForm.autocompleteField.$error" ng-if="searchForm.autocompleteField.$touched"></div>
+                      <md-not-found>
+                         No Books matching "{{searchText}}" were found.
+
+                      </md-not-found>
+                   </md-autocomplete>
+
+           <!--</form> -->
+            </div>
+                 <a class="btn btn-success" ng-style="{'margin-top':'20px','height':'42px'}" href="" role="button" ng-click="goToSearchResult()"><img src="/assets/img/open-iconic/svg/magnifying-glass.svg" height="15"></a>
+            </div> 
+           </div>
