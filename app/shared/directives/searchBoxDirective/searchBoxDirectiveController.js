@@ -50,11 +50,11 @@
                   if($scope.selItem && $scope.searchResult.length>0){
                       if(!user){
                          anonymousBookService.setBookToDisplay($scope.selItem); 
-                         if($location.path()=="/searchAnonymous"){
+                         if($location.path()=="/bookDetails"){
                              $route.reload();
                             }
                           else{
-                              $location.path("/searchAnonymous");
+                              $location.path("/bookDetails");
                           }
                          
                       }

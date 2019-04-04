@@ -34,8 +34,14 @@
                 
                $scope.goToAnonymousBookPage=function(book){
                    anonymousBookService.setBookToDisplay(book);
-                   $location.path("/searchAnonymous");
+                   $location.path("/bookDetails");
                }
+               
+               $scope.goToCategoriesPage=function(){
+                   $location.path("/categories");
+               }
+               
+               
 
 
 
