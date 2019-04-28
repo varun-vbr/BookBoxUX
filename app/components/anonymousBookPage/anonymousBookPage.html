@@ -52,13 +52,14 @@
             </style>
         </head>
         <body>
-            <ng-include src="'/app/shared/anonymousToolbar/anonymousToolbar.html'"></ng-include>
+            <!--<ng-include src="'/BookBox/BookBoxUX/app/shared/anonymousToolbar/anonymousToolbar.html'"></ng-include> -->
+            <anonymous-header></anonymous-header>
             <search-box selected-type="selectedType" search-text="searchText" selected-item="selectedItem"></search-box>
             <div class="container bookContainer">
                 <div class="row">
                     <div class="col-sm-2 bookImg">
                         <div class="d-flex justify-content-center">
-                            <img alt="selectedBook" ng-src="/assets/img/bookCovers{{bookOnDisplay.localImageUrl}}" height="250" > 
+                            <img alt="selectedBook" ng-src="/BookBox/BookBoxUX/assets/img/bookCovers{{bookOnDisplay.localImageUrl}}" height="250" > 
                         </div>
                          
                     </div>

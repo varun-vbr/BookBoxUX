@@ -33,12 +33,13 @@
 
         </head>
         <body>
-            <ng-include src="'/app/shared/anonymousToolbar/anonymousToolbar.html'"></ng-include>
+           <!-- <ng-include src="'/BookBox/BookBoxUX/app/shared/anonymousToolbar/anonymousToolbar.html'"></ng-include> -->
+            <anonymous-header></anonymous-header>
             <search-box selected-type="selectedType" search-text="searchText" selected-item="selectedItem"></search-box>
          <script type="text/ng-template" id="tpl.html">
                         <a href=""  style="text-decoration: none;" ng-click="goToAnonymousBookPage(item)">
                             <div class="d-flex justify-content-center" style="margin-top:25px;">
-                             <img alt="category1" ng-src="/assets/img/bookCovers{{item.localImageUrl}}" height="250">
+                             <img alt="category1" ng-src="/BookBox/BookBoxUX/assets/img/bookCovers{{item.localImageUrl}}" height="250">
                             </div>
                               <div  style="margin-left:25px; margin-right:25px; margin-top:10px;margin-bottom:10px;" >
                                  <span class="truncate" style="color:black; font-weight:bold">{{item.title}}</span>

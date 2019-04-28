@@ -1,7 +1,7 @@
 bookBoxApp.directive('starRating', function () {
     return {
         restrict: 'AE',
-        templateUrl:'/app/shared/directives/ratingStarsDirective/ratingStarsDirective.html' ,
+        templateUrl:'/BookBox/BookBoxUX/app/shared/directives/ratingStarsDirective/ratingStarsDirective.html' ,
         scope: {
             ratingValue: '=',
             max: '=',

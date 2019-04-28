@@ -37,10 +37,7 @@
                    $location.path("/bookDetails");
                }
                
-               $scope.goToCategoriesPage=function(){
-                   $location.path("/categories");
-               }
-               
+              
                
 
 
