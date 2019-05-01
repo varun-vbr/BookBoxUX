@@ -1,1 +1,52 @@
-This is Category Page for {{categoryDetails.name}}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+      .truncate{
+            width: 167px;
+            display:block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .title{
+            margin-left:10px;
+            margin-top:25px;
+            color:#666666;
+            font-weight:bold;
+        }
+    </style>
+
+</head>
+
+<body>
+<anonymous-header></anonymous-header>
+<search-box selected-type="selectedType" search-text="searchText" selected-item="selectedItem"></search-box>
+<div class="container">
+<div class="row">  
+<div class="col-sm-12">
+    <h2 class="title">{{categoryDetails.name}}</h2>
+    <div class="row">
+    <div ng-repeat="item in categoryDetails.books" class="col-sm-2 col-xs-2 col-md-2 col-lg-2" style="background:#F2F2F2;margin-left:10px; margin-right:10px; margin-top:10px;margin-bottom:10px;">
+    	<a href=""  style="text-decoration: none;" ng-click="goToAnonymousBookPage(item)" >
+                <div class="d-flex justify-content-center" style="margin-top:15px;">
+                     <img alt="category1" ng-src="/BookBox/BookBoxUX/assets/img/bookCovers{{item.localImageUrl}}" width="160" height="250">
+                </div>
+                <div>
+                    <span class="truncate" style="color:black; font-weight:bold">{{item.title}}</span>
+                    <md-tooltip md-direction="bottom">{{item.title}}</md-tooltip>
+                </div>
+                <div style="margin-bottom:15px;">
+                   <span style="color:#3B3A3A; font-size:small">{{item.author}}</span>
+                </div>
+            </a>
+    </div>      
+    </div>
+       
+  </div>
+ </div>  
+</div>
+</body>
+
+</html>
