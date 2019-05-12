@@ -14,8 +14,12 @@
                                }
                                $scope.init();
                                $scope.goToAnonymousBookPage=function(book){
-                                     anonymousBookService.setBookToDisplay(book);
-                                     $location.path("/bookDetails");
-                                }
+                                       anonymousBookService.getReviewCountFromServer(book.bookId).
+                                       success(function(count){
+                                       anonymousBookService.setBookToDisplay(book);
+                                       anonymousBookService.setReviewCount(count);          
+                                       $location.path("/bookDetails");
+                                       }).error(function(error){alert("Error!")});
+                               }
          
     }])
