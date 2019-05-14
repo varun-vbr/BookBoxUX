@@ -3,12 +3,14 @@
         ['$scope',
          '$location',
          '$route',
+         '$mdDialog',
         'anonymousBookService',
         'userManagementService',
         'searchBoxService',
         'anonymousCategoryService',
         'anonymousToolBarService',
-    function($scope,$location,$route,anonymousBookService,userManagementService,searchBoxService,anonymousCategoryService, anonymousToolBarService){
+        'anonymousUserDialogService',
+    function($scope,$location,$route,$mdDialog,anonymousBookService,userManagementService,searchBoxService,anonymousCategoryService, anonymousToolBarService,anonymousUserDialogService){
          $scope.searchText;
          $scope.selectedItem;
          $scope.selectedType='None';
@@ -56,5 +58,17 @@
                                                                                 
                                          
         }
+         
+         $scope.showAnonymousReviewDlg = function(ev) {
+                anonymousUserDialogService.setBookReviewed($scope.bookOnDisplay);
+                $mdDialog.show({
+                  controller: 'anonymousUserDialogCtrl',
+                  templateUrl: '/BookBox/BookBoxUX/app/components/userRatingDialog/userRatingDialog.html',
+                  parent: angular.element(document.body),
+                  targetEvent: ev,
+                  clickOutsideToClose:true,
+                })
+                
+       };
          $scope.init();
     }])
