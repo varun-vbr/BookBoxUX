@@ -17,3 +17,10 @@ and open the template in the editor.
 }
 
 .bb-img-hov:hover{cursor: pointer;}
+
+.links{
+      color:#FA551B;
+      }
+.links:hover{
+      color:#FA551B;
+      }

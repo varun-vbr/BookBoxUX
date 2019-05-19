@@ -60,14 +60,18 @@
         }
          
          $scope.showAnonymousReviewDlg = function(ev) {
+             anonymousBookService.getReviewsForBook($scope.bookOnDisplay.bookId).
+             success(function(reviews){
                 anonymousUserDialogService.setBookReviewed($scope.bookOnDisplay);
+                anonymousUserDialogService.setBookReviews(reviews); 
                 $mdDialog.show({
                   controller: 'anonymousUserDialogCtrl',
                   templateUrl: '/BookBox/BookBoxUX/app/components/userRatingDialog/userRatingDialog.html',
                   parent: angular.element(document.body),
                   targetEvent: ev,
                   clickOutsideToClose:true,
-                })
+                })}).
+             error(function(error){alert("Error!");});
                 
        };
          $scope.init();

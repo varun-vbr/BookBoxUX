@@ -21,6 +21,9 @@
              return reviewCount;
          }
          
+         anonymousBookService.getReviewsForBook=function(bookId){
+            return $http.get("http://localhost:8081/BookBoxAPI/review/allReviews/"+bookId);
+         }
          
 
         return anonymousBookService;

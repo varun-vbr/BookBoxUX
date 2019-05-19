@@ -1,8 +1,33 @@
 <md-dialog aria-label="Mango (Fruit)">
   <form ng-cloak>
     <md-dialog-content>
-      <div style="width:520px; height:500px">
-        {{bookForReview.title}}
+      <div style="width:520px; height:500px; overflow-y: hidden">
+        <h4 style="margin-bottom: 15px;margin-left: 20px;margin-right: 20px;margin-top: 9px;font-weight: normal;color:#666666;">{{bookForReview.title}}</h4> 
+          <h6 style="margin-left: 20px; margin-right: 20px;margin-bottom:3px;font-weight: normal;color:#949494;">Average Rating:<span style="margin-left:3px;">{{bookForReview.averageRating}}</span></h6>
+          
+          <div  style="margin-left: 20px; margin-right: 20px;margin-bottom:10px;">
+            <star-rating max="5" rating-value="bookForReview.averageRating" read-only="true" ng-if="bookForReview.averageRating > 0"></star-rating>
+            <span style="color:#949494;margin-left: 0px;" ng-if="bookForReview.averageRating > 0">({{reviews.length}})</span>
+              <span style="margin-left: 5px;margin-right: 5px;border-left: 1px solid #949494" ng-if="bookForReview.averageRating > 0">
+              </span>
+              <span><a class="links" href="">WRITE REVIEW</a></span>
+          </div>
+          <div style="margin-left: 20px; margin-right: 20px;border-bottom: 1px solid #949494">
+          </div>
+          <div style="margin-top: 7px;margin-left: 20px; margin-right: 20px;margin-bottom:20px;" ng-if="reviews.length>0">
+            <h6 style="font-weight: normal;color:#949494;">Reviews By Other Book Box Members.</h6>
+            <div style="height:332px; overflow-y:scroll">      
+            <div ng-repeat="review in reviews" style="margin-top: 15px;margin-bottom: 7px;">
+                <star-rating max="5" rating-value="review.rating" read-only="true" style="margin-bottom: 3px"></star-rating>
+                <div style="margin-bottom: 2px">{{review.reviewComment}}</div>
+                <p style="color:#949494;font-size:small">By {{review.user.name}} on {{review.reviewDate}}</p>
+            </div> 
+            </div>
+          </div>
+          <div style="margin-top: 7px;margin-left: 20px; margin-right: 20px;margin-bottom:3px;" ng-if="reviews.length===0">
+            <h6 style="font-weight: normal;color:#949494;">Be the first to write a review.</h6>
+          </div>
+              
       </div>   
     </md-dialog-content>
   </form>
