@@ -12,5 +12,9 @@
         .when("/categories",{
             templateUrl:"/BookBox/BookBoxUX/app/components/anonymousCategoryPage/anonymousCategoryPage.html",
             controller:"anonymousCategoryPageCtrl"
+        })
+        .when("/login",{
+            templateUrl:"/BookBox/BookBoxUX/app/components/loginPage/loginPage.html",
+            controller:"loginPageCtrl"
         });
     })
