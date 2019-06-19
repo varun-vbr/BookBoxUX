@@ -1,0 +1,152 @@
+<html>
+    <head>
+        <style>
+            .page-background{
+               background:linear-gradient(rgba(102, 102, 102, 0.7), rgba(102, 102, 102, 0.7)), url(/BookBox/BookBoxUX/assets/img/logos/book-books-education.jpg) no-repeat center center fixed;           
+               background-size: cover;
+               height:100vh;
+               overflow: hidden;
+               z-index:-2;    
+               
+              }
+            
+            md-input-container:not(.md-input-invalid).md-input-focused label{
+                color: rgb(250,250,250);
+                font-weight:bold;
+            }
+            md-input-container:not(.md-input-invalid).md-input-has-value label {
+                color: rgb(250,250,250);
+                font-weight:bold;
+            }
+            md-input-container label{
+                color:#423b3bdb;
+                font-style: italic;
+                font-size: 14px;
+            }
+         md-input-container .md-input{
+                background-color: rgb(250,250,250);
+                height:30px;
+                width:250px;
+            }
+        md-input-container.md-input-invalid label {
+            color: rgb(221,44,0);
+        }
+            .justify-center{
+                text-align: center; 
+                width:100%;
+                display:inline-block;
+            }
+            md-select{
+                display:inline-block;
+                color:black;
+            }
+            
+            md-input-container .md-placeholder{color:black;}
+            
+            md-checkbox .md-label{color: rgb(250,250,250);}
+            
+            md-checkbox .md-icon{border-color:rgb(250,250,250);}
+            
+            md-checkbox.md-checked .md-icon{background-color:rgba(40, 167, 69, 0.83);}
+
+        </style>
+    </head>
+    <body>
+        <div class="page-background">
+            <div class="row" style="margin-bottom: 15px; margin-top: 10px; width:100%;">
+                <div class="col-sm-12">
+                    <a href="/BookBox/BookBoxUX/#/" style="text-align: center; display:block;"><img src="/BookBox/BookBoxUX/assets/img/logos/bookbox_logo2.png"  width="140" height="50"></a>
+                 </div>
+                
+            </div>
+            <div class="row" style="margin-bottom: -1px; width:100%;">
+                <div class="col-sm-12">
+                    <h3 style="color:#fff; text-align: center">Sign up for Book Box</h3>
+              </div>
+                
+            </div>
+            <div class="row" style="margin-bottom: 0px; width:100%;">
+                <div class="col-sm-12">
+                    <p style="color:#fff; text-align: center; font-weight: normal;font-size:15px;">Enter your details to create an account</p>
+              </div>
+               
+            </div>    
+            <div class="row" style="height:74vh">
+              <div class="col-sm-6" style="border-right: 1px solid #fff; margin-right: 0;padding-right: 0;">
+                  <div class="row justify-center">
+                            <md-input-container>
+                                <label>Name</label>
+                                <input ng-model="name" autofocus required>
+                            </md-input-container>
+                        </div> 
+                        <div class="row justify-center">
+                            <md-input-container>
+                                <label>Username</label>
+                                <input ng-model="username" required>
+                            </md-input-container>
+                        </div> 
+                  <div class="row justify-center">
+                            <md-input-container>
+                                <label>Email</label>
+                                <input ng-model="email" required>
+                            </md-input-container>
+                        </div> 
+                  
+                  <div class="row justify-center">
+                            <md-input-container>
+                                <label>Password</label>
+                                <input ng-model="password" type="password" required>
+                            </md-input-container>
+                        </div> 
+                        <div class="row justify-center">
+                            <md-input-container>
+                                <label>Confirm Password</label>
+                                <input ng-model="confirmPassword" type="password" required>
+                            </md-input-container>
+                        </div> 
+                        <div class="row justify-center">
+                            <md-input-container>
+                                <label>Credit Card</label>
+                                <input ng-model="creditCard" required>
+                            </md-input-container>
+                        </div> 
+              </div>
+              <div class="col-sm-6" style="margin-left:0;padding-left: 0;">
+                <div class="row justify-center">
+                   <md-input-container>
+                        <label>Plan</label>
+                        <md-select ng-style="{'width':'250px', 'background':'#fff'}" ng-model="plan">
+                              <md-option value="Elite">Elite</md-option>
+                              <md-option value="Premium">Premium</md-option>
+                              <md-option value="Basic">Basic</md-option>
+                        </md-select> 
+                    </md-input-container>  
+                    <a href="" class="bb-header-hyperlinks" style="font-size: small;" ng-click="openPlanDetailDialog($event)">Plan Details</a>
+                  </div>
+                  <div class="row justify-center" style="margin-left: -49px;">
+                   <md-input-container>
+                        <label>Payment Type</label>
+                        <md-select ng-style="{'width':'250px', 'background':'#fff'}" ng-model="paymentType">
+                              <md-option value="Yearly">Yearly- Pay Every Year</md-option>
+                              <md-option value="Bi-Annual">Bi-Annual- Pay Every 6 Months</md-option>
+                              <md-option value="Monthly">Monthly- Pay Every Month</md-option>
+                              <md-option value="Fortnightly">Fortnightly- Pay Every 15 Days</md-option>
+                        </md-select> 
+                    </md-input-container>  
+                  </div>
+                  <div class="row" style="margin-left: 85px;margin-top: 20px;">
+                     <md-checkbox ng-model="autoDeduction" aria-label="Allow Auto-Deduction">
+                            Allow Auto-Deduction
+                     </md-checkbox>
+                  </div>
+                   <div class="row justify-center" style="margin-left: -50px; margin-top: 20px;">
+                        <a href="" class="btn btn-success" style="width: 250px;" ng-click="signUp()">Sign Up</a>
+                    </div>
+                  <div class="row justify-center" style="margin-left: -50px;margin-top: 15px; ">
+                      <p  style="font-size: small; display:inline-block; color:#CBD9EF;">Already Have an account?</p> <span><a href="/BookBox/BookBoxUX/#/login"  class="bb-header-hyperlinks" style="font-size:small;">Sign In</a></span>
+                 </div>
+              </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -2,8 +2,9 @@
     <head>
         <style>
             .page-background{
-               background: url(/BookBox/BookBoxUX/assets/img/logos/books-library-students.jpg) no-repeat center center fixed;           background-size: cover;
-               height:657px;
+               background: linear-gradient(rgba(102, 102, 102, 0.7), rgba(102, 102, 102, 0.7)),url(/BookBox/BookBoxUX/assets/img/logos/books-library-students.jpg) no-repeat center center fixed;           
+               background-size: cover;
+               height:100vh;
                overflow: hidden;
                z-index:-2;    
                
@@ -49,38 +50,37 @@
     </head>
     <body>
         <div class="page-background">
-            <div class="page-color">
                 <div style="z-index: 5;">
                   <div  class="centered">
                     <div class="row">
                         <div class="col-sm-6" style="margin-right: 30px;margin-top: 100px;">
-                            <a href="/BookBox/BookBoxUX/#/"><img src="/BookBox/BookBoxUX/assets/img/logos/bookbox_logo2.png"  width="160" height="60" ></a>
+                            <a href="/BookBox/BookBoxUX/#/" ><img src="/BookBox/BookBoxUX/assets/img/logos/bookbox_logo2.png"  width="160" height="60" ></a>
                         </div>
                         <div class="col-sm-2" style="border-left:1px solid white; height: 280px"></div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-2" ng-keydown="$event.keyCode === 13 && performLogin(username,password)">
                         <div class="row">
                             <md-input-container>
-                                <label>Username</label>
-                                <input ng-model="username">
+                                <label>Username or Email</label>
+                                <input ng-model="username" autofocus>
                             </md-input-container>
                         </div> 
                         <div class="row">
                             <md-input-container>
                                 <label>Password</label>
-                                <input ng-model="password">
+                                <input ng-model="password" type=password>
                             </md-input-container>
                         </div> 
                         <div class="row" style="width: 250px;">
-                            <a href="" class="btn btn-success" style="width: 250px;">Sign In</a>
+                            <a href="" class="btn btn-success" style="width: 250px;" ng-click="performLogin(username,password)" ng-keydown="$event.keyCode === 13 && performLogin(username,password)">Sign In</a>
                         </div>
                         <div class="row" style="width:250px;">
-                            <a href=""  class="bb-header-hyperlinks" style="margin-left: 100px; margin-top: 22px; font-size:small;">Sign Up</a>
+                            <a href="/BookBox/BookBoxUX/#/signup"  class="bb-header-hyperlinks" style="margin-left: 100px; margin-top: 22px; font-size:small;">Sign Up</a>
                         </div>    
                       </div>
                      </div>    
                     </div> 
                   </div>
-                </div>    
+                  
 
                 </div>
     </body>

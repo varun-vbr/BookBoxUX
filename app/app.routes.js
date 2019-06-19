@@ -16,5 +16,13 @@
         .when("/login",{
             templateUrl:"/BookBox/BookBoxUX/app/components/loginPage/loginPage.html",
             controller:"loginPageCtrl"
+        })
+        .when("/loggedin",{
+            templateUrl:"/BookBox/BookBoxUX/app/components/loggedInHomePage/loggedInHomePage.html",
+            controller:"loggedInHomePageCtrl"
+        })
+        .when("/signup",{
+            templateUrl:"/BookBox/BookBoxUX/app/components/signUpPage/signUpPage.html",
+            controller:"signUpCtrl"
         });
     })
