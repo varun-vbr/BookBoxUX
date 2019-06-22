@@ -24,3 +24,12 @@ and open the template in the editor.
 .links:hover{
       color:#FA551B;
 }
+
+.truncate{
+    width: 200px;
+    display:block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+

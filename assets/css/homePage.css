@@ -1,0 +1,53 @@
+.section-heading{
+    margin-left:25px;
+    margin-top:25px;
+    color:#666666;
+    font-weight:bold; 
+}
+
+.section-brief{
+    margin-left:25px;
+    margin-bottom:25px;
+    color:#666666;           
+}
+
+.carousal .slick-slide {
+    margin: 0px 20px;
+    background:#F2F2F2;
+}     
+
+.carousal .slick-prev:before,
+.carousal .slick-next:before {
+      color: #28a745;
+}
+.carousal .slick-slide img {
+     width: 75%;
+}
+
+
+.carousal-template-container a{
+    text-decoration: none;      
+ }
+.carousal-template-img-div{
+    margin-top:25px;
+}
+.carousal-template-title-div{
+     margin:10px 25px;
+}
+              
+.carousal-template-title-div span{
+    color:black; 
+    font-weight:bold;
+}
+              
+.carousal-template-author-div{
+    margin-bottom:25px;
+    margin-left:25px; 
+    margin-right:25px;
+}
+              
+.carousal-template-author-div span{
+    color:#3B3A3A; 
+    font-size:small;
+}
+
