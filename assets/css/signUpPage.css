@@ -1,0 +1,137 @@
+.page-background-1{
+               background:linear-gradient(rgba(102, 102, 102, 0.7), rgba(102, 102, 102, 0.7)), url(/BookBox/BookBoxUX/assets/img/logos/book-books-education.jpg) no-repeat center center fixed;           
+               background-size: cover;
+               height:100vh;
+               overflow: hidden;
+               z-index:-2;    
+               
+              }
+            
+          .custom  md-input-container:not(.md-input-invalid).md-input-focused label{
+                color: rgb(250,250,250);
+                font-weight:bold;
+            }
+          .custom  md-input-container:not(.md-input-invalid).md-input-has-value label {
+                color: rgb(250,250,250);
+                font-weight:bold;
+            }
+          .custom  md-input-container label{
+                color:#423b3bdb;
+                font-style: italic;
+                font-size: 14px;
+            }
+       .custom  md-input-container .md-input{
+                background-color: rgb(250,250,250);
+                height:30px;
+                width:250px;
+            }
+     .custom  md-input-container.md-input-invalid label {
+            color: rgb(221,44,0);
+        }
+            .justify-center{
+                text-align: center; 
+                width:100%;
+                display:inline-block;
+            }
+          .custom  md-select{
+                display:inline-block;
+                color:black;
+            }
+            
+         .custom  md-input-container .md-placeholder{color:black;}
+            
+          .custom  md-checkbox .md-label{color: rgb(250,250,250);}
+            
+         .custom  md-checkbox .md-icon{border-color:rgb(250,250,250);}
+            
+          .custom md-checkbox.md-checked .md-icon{background-color:rgba(40, 167, 69, 0.83);}
+            
+            .home-row{
+               margin-bottom: 15px; 
+               margin-top: 10px; 
+               width:100%; 
+            }
+            
+            .home-row a{
+               text-align: center; 
+               display:block; 
+            }
+            
+            .header-row{
+                margin-bottom: -1px; 
+                width:100%;
+            }
+            
+            .header-row h3{
+                color:#fff; 
+                text-align: center
+            }
+            
+            .sub-heading-row{
+               margin-bottom: 0px; 
+               width:100%; 
+            }
+            
+            .sub-heading-row p{
+               color:#fff; 
+               text-align: center; 
+               font-weight: normal;
+               font-size:15px; 
+            }
+            
+            .details-row-1{
+                height:74vh;
+            }
+            
+            .border-separator{
+               border-right: 1px solid #fff; 
+               margin-right: 0;
+               padding-right: 0; 
+            }
+            
+            .details-row-2{
+              margin-left:0;
+              padding-left: 0;  
+            }
+            
+            .details-row-2 md-select{
+                width:250px; 
+                background:#fff
+            }
+            
+            .details-row-3 {
+                margin-left: -49px;
+            }
+            
+            .plan-link{
+                font-size: small;
+            }
+            
+            .auto-deduct-row{
+                margin-left: 85px;
+                margin-top: 20px;
+            }
+            
+            .sign-up-row{
+                margin-left: -50px; 
+                margin-top: 20px;
+            }
+            
+            .sign-up-row a{
+               width: 250px; 
+            }
+            
+            .sign-in-row{
+               margin-left: -50px;
+               margin-top: 15px;  
+            }
+            
+            .sign-in-row p{
+               font-size: small; 
+               display:inline-block; 
+               color:#CBD9EF;    
+            }
+            
+            .sign-in-row a{
+                font-size:small;
+            }
