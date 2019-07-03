@@ -1,12 +1,12 @@
     <div class='d-flex justify-content-center'>
              <div class="row" > 
-              <md-select ng-style="{'height':'42px','border':'1px solid #CCCCCC','background':'#f2f2f2'}" ng-model="selectedType" placeholder="Type" required md-no-asterisk="false"
+              <md-select class="search-type" ng-model="selectedType" placeholder="Type" required md-no-asterisk="false"
                           >
               <md-option value="Title">Title</md-option>
               <md-option value="Author">Author</md-option>
               <md-option value="Publisher">Publisher</md-option>
             </md-select>     
-            <div ng-style="{'width':'600px','margin-top':'20px'}">
+            <div class="autocomplete">
 
           <!-- <form name="autocompleteForm"> -->
             <md-autocomplete
@@ -34,6 +34,6 @@
 
            <!--</form> -->
             </div>
-                 <a class="btn btn-success" ng-style="{'margin-top':'20px','height':'42px'}" href="" role="button" ng-click="goToSearchResult()"><img src="/BookBox/BookBoxUX/assets/img/open-iconic/svg/magnifying-glass.svg" height="15"></a>
+                 <a class="btn btn-success search-btn"  href="" role="button" ng-click="goToSearchResult()"><img src="/BookBox/BookBoxUX/assets/img/open-iconic/svg/magnifying-glass.svg" height="15"></a>
             </div> 
            </div>
