@@ -1,0 +1,109 @@
+#navwrapper{
+    background-color:#666666;
+    
+}
+#navContentWrapper{
+    position:relative;
+    background-color:#666666;
+    transition: 0.3s;
+}
+#navContentWrapper nav{
+    position:absolute;
+    
+}
+.navContentHover{left:0px;
+        transition: 0.3s;
+        background-color:#666666;
+        height:1500px;
+        width:150px;}
+.navContent{
+    left:-200px;
+    transition: 0.3s;
+}
+#navContentWrapper li{
+    padding-top:25px;
+    padding-bottom: 8px;
+    margin-left: 5px;
+    margin-right: 15px;
+    border-bottom:0.1px solid #9e9e9e;
+}
+
+
+#navContentWrapper a{
+    color: white;
+    font-size:13px;
+    
+}
+#navContentWrapper a:hover{
+    color: white;
+    font-size:13px;
+}
+
+#navwrapper li{
+    margin-top:25px;
+    margin-bottom: 25px;
+    margin-left: 25px;
+    margin-right: 15px
+}
+
+.toolbar-container{
+    width: 100vw;
+}
+
+#navBarParent{
+    height:100vh;
+    
+}
+
+#sidenav{
+    background-color: #666666;
+
+    width:10vh;
+
+    display: flex;
+    flex-direction: column;
+    height:100vh;
+    transition: width 0.2s;
+}
+
+#sidenav ul li a:link, #sidenav ul li a:visited{
+    text-decoration: none;
+    color:white;
+}
+
+.list{
+    list-style: none;
+    padding:0;
+}
+
+.list li{
+    display:block;
+    margin-top:15px;
+    margin-bottom:15px;
+}
+
+
+#sidenav:hover ul li a span{
+    display:inline;
+}
+
+#sidenav ul li a span{
+    display:none;
+    transition: display 1s;
+}
+#sidenav:hover{
+    width:30vh;
+}
+
+.list-label{
+    margin-left: 15px;
+}
+
+.list li:hover{
+    background-color: #9e9e9e;
+}
+
+.selected{
+     background-color: #9e9e9e;
+}
+
