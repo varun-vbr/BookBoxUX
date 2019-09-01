@@ -4,8 +4,10 @@ bookBoxApp.controller("anonymousHeaderCtrl",
                        '$location',
                        'anonymousToolBarService',
                        'anonymousCategoryService',
-                        function($scope,$route,$location,anonymousToolBarService,anonymousCategoryService){
-                            
+                       'userManagementService',
+                        function($scope,$route,$location,anonymousToolBarService,anonymousCategoryService, userManagementService){
+                              $scope.anonymousLogin=true;
+                              $scope.currentUser="";
                               $scope.goToCategoriesPage=function(categoryId, categoryName){debugger;
                                          anonymousToolBarService.getCategoryBooks(categoryId).
                                          success(function (bookList) {debugger
@@ -21,5 +23,14 @@ bookBoxApp.controller("anonymousHeaderCtrl",
                                                                                 
                                          
                               }
+                              
+                              $scope.init=function(){
+                               var userInfo= userManagementService.getCurrentUser();
+                                  if(userInfo){
+                                      $scope.currentUser=userInfo.user.name;
+                                  } 
+                              }
+                              $scope.init();
+                              
                
 }])

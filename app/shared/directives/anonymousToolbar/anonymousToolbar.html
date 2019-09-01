@@ -43,8 +43,11 @@
                      </div>
                     </div>
                 </div>
-                <div class="col-xs-1">
+                <div class="col-xs-1" ng-class="{ 'hide' : currentUser != '' }">
                     <a id="signIn" href="/BookBox/BookBoxUX/#/login" class="float-right bb-header-hyperlinks">Sign In</a>    
+                </div>
+                <div class="col-xs-1" ng-class="{ 'hide' : currentUser == '' }">
+                    <a id="signIn" href="/BookBox/BookBoxUX/#/login" class="float-right bb-header-hyperlinks"><img src="/BookBox/BookBoxUX/assets/img/icons/User.png" width="32" height="32"/><span>{{currentUser}}</span></a>    
                 </div>
 
             </div>
