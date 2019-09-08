@@ -1,11 +1,61 @@
 
 <anonymous-header></anonymous-header>
+<div style="display:inline-block; position:relative; width:100vw">
+    <logged-in-navbar style="position:absolute;height:100%;" current-selection="0"></logged-in-navbar>
+    <search-box style="justify-content: center" selected-type="selectedType" search-text="searchText" selected-item="selectedItem"></search-box>
+        
+    <div style="justify-content: center;">
+        <script type="text/ng-template" id="tpl.html">
+                        <a href="" ng-click="goToAnonymousBookPage(item)">
+                            <div class="d-flex justify-content-center carousal-template-img-div">
+                             <img alt="category1" ng-src="/BookBox/BookBoxUX/assets/img/bookCovers{{item.localImageUrl}}" height="250">
+                            </div>
+                              <div class="carousal-template-title-div">
+                                 <span class="truncate">{{item.title}}</span>
+                                 <md-tooltip md-direction="bottom">{{item.title}}</md-tooltip>
+                             </div>
+                             <div class="carousal-template-author-div">
+                                 <span>{{item.author}}</span>
+                             </div>
+                          </a>
+        </script>
+        
+         <h3 class="section-heading">Reading Suggestions</h3>
+        <h6 class="section-brief">Reading suggestions based on your history.</h6>
+        <div class="container carousal" >
+             <slick infinite=false slides-to-show=4 slides-to-scroll=4 dots=false arrows=true lazyLoad=progressive ng-if="booksLoaded">
+                 <div ng-repeat="item in userInfo.readingSuggestions">
+                     <div class="carousal-template-container" ng-include="'tpl.html'" >
 
-<div style="display:flex; position: relative;">
-<logged-in-navbar style="position:absolute;" current-selection="0"></logged-in-navbar>
-<div style="justify-content: center; width:100vw;">
-    <search-box selected-type="selectedType" search-text="searchText" selected-item="selectedItem"></search-box>
-    User {{userInfo.user.name}} is logged in
-</div>    
+                     </div>
+                 </div>
+             </slick>
+         </div>
 
-</div>    
+        <h3 class="section-heading">Your Current Reads</h3>
+        <h6 class="section-brief">Books you are reading now.</h6>
+         <div class="container carousal" >
+             <slick infinite=false slides-to-show=4 slides-to-scroll=4 dots=false arrows=true lazyLoad=progressive ng-if="booksLoaded">
+                 <div ng-repeat="item in currentReads">
+                     <div class="carousal-template-container" ng-include="'tpl.html'" >
+
+                     </div>
+                 </div>
+             </slick>
+         </div>
+       
+        <h3 class="section-heading">Popular Books</h3>
+        <h6 class="section-brief">Keep pace with your peers. Browse the most-viewed books.</h6>
+        <div class="container carousal">
+             <slick infinite=false slides-to-show=4 slides-to-scroll=4 dots=false arrows=true lazyLoad=progressive ng-if="booksLoaded">
+                 <div ng-repeat="item in userInfo.popularBooks">
+                     <div class="carousal-template-container" ng-include="'tpl.html'" >
+
+                     </div>
+                 </div>
+             </slick>
+         </div>
+    </div>
+    
+    
+</div>
