@@ -23,6 +23,32 @@ bookBoxApp.controller("anonymousHeaderCtrl",
                                                                                 
                                          
                               }
+                              $scope.signOut=function(){
+                                  $scope.currentUser="";
+                                  $location.path("/");
+                                  userManagementService.setCurrentUser(undefined);
+                              }
+                              
+                              $scope.goToHome=function(){
+                                  var userInfo=userManagementService.getCurrentUser();
+                                  if(!userInfo){
+                                      if($location.path()=="/"){
+                                         $route.reload(); 
+                                      }
+                                      else{
+                                          $location.path("/");
+                                      }
+                                      
+                                  }
+                                  else{
+                                      if($location.path()=="/loggedin"){
+                                          $route.reload();
+                                      }
+                                      else{
+                                          $location.path("/loggedin");
+                                      }
+                                  }
+                              }
                               
                               $scope.init=function(){
                                var userInfo= userManagementService.getCurrentUser();

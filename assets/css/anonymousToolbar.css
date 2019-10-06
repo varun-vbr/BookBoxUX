@@ -46,3 +46,10 @@ and open the template in the editor.
 .hide{
     display:none;
 }
+.sign-out{
+    margin: 9px 25px 9px 9px;
+    font-size: small;
+}
+.username{
+    margin: 5px;
+}

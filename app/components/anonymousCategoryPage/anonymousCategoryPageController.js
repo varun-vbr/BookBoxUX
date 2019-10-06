@@ -8,9 +8,14 @@
                                $scope.searchText;
                                $scope.selectedItem;
                                $scope.selectedType='None';
-                               $scope.categoryDetails={name:'',books:[]}; 
+                               $scope.categoryDetails={name:'',books:[]};
+                               $scope.currentUser="";
                                $scope.init=function(){debugger;
+                                    var userInfo= userManagementService.getCurrentUser();                  
                                    $scope.categoryDetails=anonymousCategoryService.getCategoryDetails();
+                                  if(userInfo){
+                                      $scope.currentUser=userInfo.user.name;
+                                  }                  
                                }
                                $scope.init();
                                $scope.goToAnonymousBookPage=function(book){

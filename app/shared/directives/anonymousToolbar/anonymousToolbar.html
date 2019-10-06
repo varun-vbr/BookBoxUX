@@ -3,7 +3,7 @@
     
             <div class="headerToolbar row">
                <div class="col-xs-3">
-                  <a href="/BookBox/BookBoxUX/#/"><img id="bookboxlogo" src="/BookBox/BookBoxUX/assets/img/logos/bookbox_logo2.png" class="img-responsive" width="134" height="42" ></a>
+                  <a ng-click="goToHome()"><img id="bookboxlogo" src="/BookBox/BookBoxUX/assets/img/logos/bookbox_logo2.png" class="img-responsive" width="134" height="42" ></a>
               </div>
                 <div class="col-xs-1 ml-auto">
                     <div class="dropdown">  
@@ -43,11 +43,14 @@
                      </div>
                     </div>
                 </div>
-                <div class="col-xs-1" ng-class="{ 'hide' : currentUser != '' }">
+                <div class="col-xs-1" ng-hide="currentUser != ''">
                     <a id="signIn" href="/BookBox/BookBoxUX/#/login" class="float-right bb-header-hyperlinks">Sign In</a>    
                 </div>
-                <div class="col-xs-1" ng-class="{ 'hide' : currentUser == '' }">
-                    <a id="signIn" href="/BookBox/BookBoxUX/#/login" class="float-right bb-header-hyperlinks"><img src="/BookBox/BookBoxUX/assets/img/icons/User.png" width="32" height="32"/><span>{{currentUser}}</span></a>    
+                <div class="col-xs-1 username" ng-hide="currentUser == ''">
+                    <img src="/BookBox/BookBoxUX/assets/img/icons/User.png" width="32" height="32"/><span style="color:white">{{currentUser}}</span>    
+                </div>
+                <div class="col-xs-1 sign-out" ng-hide="currentUser == ''">
+                    <a id="signOut" ng-click="signOut()" class="float-right bb-header-hyperlinks"><span>Sign Out</span></a>    
                 </div>
 
             </div>
