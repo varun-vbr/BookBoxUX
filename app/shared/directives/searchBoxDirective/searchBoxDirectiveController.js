@@ -46,9 +46,9 @@
                }
 
                 $scope.goToSearchResult=function(){debugger;
-                  var user=userManagementService.getCurrentUser();                                   
+                  //var user=userManagementService.getCurrentUser();                                   
                   if($scope.selItem && $scope.searchResult.length>0){
-                      if(!user){
+                    
                          anonymousBookService.setBookToDisplay($scope.selItem); 
                          if($location.path()=="/bookDetails"){
                              $route.reload();
@@ -57,7 +57,7 @@
                               $location.path("/bookDetails");
                           }
                          
-                      }
+                      
                   }
                 }
         }])

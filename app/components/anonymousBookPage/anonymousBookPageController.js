@@ -17,10 +17,15 @@
          $scope.readOnly=true;
          $scope.rating=0;
          $scope.reviewCount;
+         $scope.currentUser="";
          $scope.init=function(){
+             var userInfo= userManagementService.getCurrentUser();
              $scope.bookOnDisplay=anonymousBookService.getBookToDisplay();
              $scope.rating=$scope.bookOnDisplay.averageRating;
              $scope.reviewCount=anonymousBookService.getReviewCount();
+             if(userInfo){
+                $scope.currentUser=userInfo.user.name;
+            }
          }
          
          $scope.goToAuthorPage=function(authorName){

@@ -1,6 +1,6 @@
-bookBoxApp.controller("loggedInHomePageCtrl",['$scope',
-                                              'userManagementService',
-                                             function($scope, userManagementService){
+bookBoxApp.controller("loggedInHomePageCtrl",['$scope','$location',
+                                              'userManagementService','anonymousBookService',
+                                             function($scope, $location, userManagementService, anonymousBookService){
                                                  $scope.searchText;
                                                  $scope.selectedItem;
                                                  $scope.selectedType='None';
@@ -16,4 +16,13 @@ bookBoxApp.controller("loggedInHomePageCtrl",['$scope',
                                                      
                                                  }
                                                  $scope.init();
+                                                 
+                                                 $scope.goToAnonymousBookPage=function(book){
+                                                       anonymousBookService.getReviewCountFromServer(book.bookId).
+                                                       success(function(count){
+                                                       anonymousBookService.setBookToDisplay(book);
+                                                       anonymousBookService.setReviewCount(count);          
+                                                       $location.path("/bookDetails");
+                                                       }).error(function(error){alert("Error!")});
+                                                   }
                                              }])

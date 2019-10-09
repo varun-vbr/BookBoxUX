@@ -12,6 +12,8 @@
         <body>
             <!--<ng-include src="'/BookBox/BookBoxUX/app/shared/anonymousToolbar/anonymousToolbar.html'"></ng-include> -->
             <anonymous-header></anonymous-header>
+            <div style="display:inline-block; position:relative; width:100vw">
+                <logged-in-navbar style="position:absolute;height:100%;" ng-hide="currentUser == ''"></logged-in-navbar>
             <search-box selected-type="selectedType" search-text="searchText" selected-item="selectedItem"></search-box>
             <div class="d-flex justify-content-center">
             <div class="container bookContainer">
@@ -59,6 +61,7 @@
                         <p>{{bookOnDisplay.description}}</p>
                     </div>
                 </div>
+            </div>
             </div>
             </div>
         </body>
