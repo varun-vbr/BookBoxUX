@@ -66,7 +66,7 @@
          
          $scope.showAnonymousReviewDlg = function(ev) {
              anonymousBookService.getReviewsForBook($scope.bookOnDisplay.bookId).
-             success(function(reviews){
+             success(function(reviews){debugger;
                 anonymousUserDialogService.setBookReviewed($scope.bookOnDisplay);
                 anonymousUserDialogService.setBookReviews(reviews); 
                 $mdDialog.show({

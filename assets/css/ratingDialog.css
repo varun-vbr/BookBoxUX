@@ -58,6 +58,10 @@
    height:332px; 
    overflow-y:scroll 
 }
+.user-rating-container-small{
+   height:123px; 
+   overflow-y:scroll 
+}
 
 .user-rating{
     margin-top: 15px;

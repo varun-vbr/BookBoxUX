@@ -9,15 +9,30 @@
           <div class="star-rating-div">
             <star-rating max="5" rating-value="bookForReview.averageRating" read-only="true" ng-if="bookForReview.averageRating > 0"></star-rating>
             <span class="review-count" ng-if="bookForReview.averageRating > 0">({{reviews.length}})</span>
-              <span class="rating-separator" ng-if="bookForReview.averageRating > 0">
+              <span class="rating-separator" ng-if="bookForReview.averageRating > 0 && !writeReview && currentUser != ''">
               </span>
-              <span><a class="links" href="">WRITE REVIEW</a></span>
+              <span><a class="links" href="" ng-if="!writeReview && currentUser != ''" ng-click="enableWriteReview()">WRITE REVIEW</a></span>
+              <div ng-if="writeReview">
+              <p style="font-weight: bold; margin-bottom: 3px">Rate this title: <span> <star-rating max="5" rating-value="rating" read-only="false" on-rating-selected="onRatingChanged"></star-rating></span></p>
+              <textarea rows="5" cols="65" placeholder="Optionally write a few words about this title." ng-model="userReview"></textarea>
+              <div style="margin-top: 10px;margin-bottom: 7px;margin-left: 251px; width:50%">
+                <a href="" style="margin-right: 20px;" class="btn btn-success" ng-click="disableWriteReview()" >Cancel</a>
+                <a href="" class="btn btn-success" ng-click="submitUserReview(rating, userReview)" >Submit Review</a>
+              </div>
+              </div>
           </div>
           <div class="dialog-separator">
           </div>
           <div class="user-review-div" ng-if="reviews.length>0">
             <h6>Reviews By Other Book Box Members.</h6>
-            <div class="user-rating-container">      
+            <div class="user-rating-container" ng-if="stretch">      
+            <div ng-repeat="review in reviews" class="user-rating">
+                <star-rating max="5" rating-value="review.rating" read-only="true" style="margin-bottom: 3px"></star-rating>
+                <div class="review-comment">{{review.reviewComment}}</div>
+                <p>By {{review.user.name}} on {{review.reviewDate}}</p>
+            </div> 
+            </div>
+            <div class="user-rating-container-small" ng-if="!strecth">      
             <div ng-repeat="review in reviews" class="user-rating">
                 <star-rating max="5" rating-value="review.rating" read-only="true" style="margin-bottom: 3px"></star-rating>
                 <div class="review-comment">{{review.reviewComment}}</div>

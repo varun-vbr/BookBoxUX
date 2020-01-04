@@ -24,5 +24,9 @@
         .when("/signup",{
             templateUrl:"/BookBox/BookBoxUX/app/components/signUpPage/signUpPage.html",
             controller:"signUpCtrl"
+        })
+        .when("/categoryListing",{
+            templateUrl:"/BookBox/BookBoxUX/app/components/categoryListingPage/categoryListingPage.html",
+            controller:"categoryListingCtrl"
         });
     })

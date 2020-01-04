@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+    </style>
+
+</head>
+
+<body>
+<anonymous-header></anonymous-header>
+<div style="display:inline-block; position:relative; width:100vw">
+<logged-in-navbar style="position:absolute;height:100%;"  current-selection="1"></logged-in-navbar>
+<search-box selected-type="selectedType" search-text="searchText" selected-item="selectedItem"></search-box>
+<div class="container">
+<div class="row">  
+<div class="col-sm-12">
+    <h2 class="title">Categories</h2>
+    <div class="row">
+    <div ng-repeat="item in categoryDetails" class="col-sm-2 col-xs-2 col-md-2 col-lg-2 category-book">
+    	<a href=""  ng-click="goToCategoryPage(item.categoryId, item.name)" >
+                <div class="d-flex justify-content-center category-img">
+                     <img alt="category1" ng-src="/BookBox/BookBoxUX/assets/img/icons{{item.localImageUrl}}" width="160" height="250">
+                </div>
+                <div>
+                    <span class="category-title">{{item.name}}</span>
+                </div>
+                
+            </a>
+    </div>      
+    </div>
+       
+  </div>
+ </div>  
+</div>
+</div>
+</body>
+
+</html>
