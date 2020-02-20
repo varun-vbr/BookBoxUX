@@ -10,11 +10,13 @@
                                $scope.selectedType='None';
                                $scope.categoryDetails={name:'',books:[]};
                                $scope.currentUser="";
+                               $scope.currentUserId=0;
                                $scope.init=function(){debugger;
                                     var userInfo= userManagementService.getCurrentUser();                  
                                    $scope.categoryDetails=anonymousCategoryService.getCategoryDetails();
                                   if(userInfo){
                                       $scope.currentUser=userInfo.user.name;
+                                      $scope.currentUserId=userInfo.user.userId;
                                   }                  
                                }
                                $scope.init();

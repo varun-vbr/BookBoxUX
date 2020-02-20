@@ -33,3 +33,9 @@ and open the template in the editor.
     text-overflow: ellipsis;
 }
 
+md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
+    background-color: #666666;
+}
+
+.custom-checkbox-fill md-checkbox.md-checked .md-icon{background-color:rgba(40, 167, 69, 0.83);}
+

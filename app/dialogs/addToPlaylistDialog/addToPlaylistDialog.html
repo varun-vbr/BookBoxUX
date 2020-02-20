@@ -1,0 +1,26 @@
+<md-dialog>
+ 
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Add to</h2>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div style="width:200px;height:410px;">
+         <div ng-repeat="item in playlistArray" class="d-flex justify-content-center custom-checkbox-fill">
+            <md-checkbox ng-model="item.checked" aria-label="item.name" style="margin-top:10px" ng-change="toggleToPlaylist(item.checked, item.id)">
+                            {{item.name}}
+            </md-checkbox>
+         
+         </div>
+              
+      </div>   
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <div class="">
+            <a href="" class="btn btn-success">Create a Playlist</a>
+      </div>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

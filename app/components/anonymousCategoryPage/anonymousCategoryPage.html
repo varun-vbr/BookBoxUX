@@ -26,10 +26,13 @@
                     <span class="truncate category-title">{{item.title}}</span>
                     <md-tooltip md-direction="bottom">{{item.title}}</md-tooltip>
                 </div>
-                <div class="category-author">
+                <div class="category-author" style="display:inline;">
                    <span>{{item.author}}</span>
+                    
                 </div>
-            </a>
+                </a>
+                <span><add-to-playlist style="float:right;" ng-if="currentUser != ''"  user-id="currentUserId" book="item" user-name="currentUser" ></add-to-playlist></span>
+            
     </div>      
     </div>
        

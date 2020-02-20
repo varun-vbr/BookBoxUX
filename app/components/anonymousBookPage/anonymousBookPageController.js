@@ -71,7 +71,7 @@
                 anonymousUserDialogService.setBookReviews(reviews); 
                 $mdDialog.show({
                   controller: 'anonymousUserDialogCtrl',
-                  templateUrl: '/BookBox/BookBoxUX/app/components/userRatingDialog/userRatingDialog.html',
+                  templateUrl: '/BookBox/BookBoxUX/app/dialogs/userRatingDialog/userRatingDialog.html',
                   parent: angular.element(document.body),
                   targetEvent: ev,
                   clickOutsideToClose:true,
