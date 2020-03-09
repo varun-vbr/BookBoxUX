@@ -39,3 +39,14 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
 
 .custom-checkbox-fill md-checkbox.md-checked .md-icon{background-color:rgba(40, 167, 69, 0.83);}
 
+.select{
+    background-color:#bdd3f2;
+    cursor: pointer;
+    opacity:0.85;
+}
+.highlight:hover{
+    background-color:#bdd3f2;
+    cursor:pointer;
+    opacity:0.85;
+}
+

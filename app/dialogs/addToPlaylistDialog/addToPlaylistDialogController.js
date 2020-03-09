@@ -1,11 +1,18 @@
-bookBoxApp.controller("addToPlaylistDialogCtrl",["$scope","$location","$route","addToPlaylistDialogService",
+bookBoxApp.controller("addToPlaylistDialogCtrl",["$scope","$location","$route","addToPlaylistDialogService","userManagementService","addToPlaylistService",
                                                                           function($scope, 
                                                                                    $location, 
                                                                                    $route,
-                                                                                   addToPlaylistDialogService){
+                                                                                   addToPlaylistDialogService,
+                                                                                   userManagementService,
+                                                                                   addToPlaylistService){
                     $scope.playlists=addToPlaylistDialogService.getPlaylists();
                     $scope.book=addToPlaylistDialogService.getBookSaved();
                     $scope.playlistArray=[];
+                    $scope.playlistName="";
+                    $scope.showForm=false;
+                    var userInfo= userManagementService.getCurrentUser(); 
+                    $scope.currentUserId=userInfo.user.userId;
+                    $scope.currentUser=userInfo.user.name;
                     
                     $scope.findBookByBookId=function(bookId,bookArray){
                         for(var i=0; i<bookArray.length; i++){
@@ -16,7 +23,8 @@ bookBoxApp.controller("addToPlaylistDialogCtrl",["$scope","$location","$route","
                         return -1;   
                     }
                     
-                    $scope.createPlaylistArray=function(currentBook, playlistsFromServer){debugger;
+                    $scope.createPlaylistArray=function(currentBook,playlistsFromServer){debugger;
+                        $scope.playlistArray.length=0;
                         for(var i=0; i<playlistsFromServer.PLAYLISTS.length; i++){
                             var listItem={id:0, name:"", checked:false};
                             if($scope.findBookByBookId(currentBook.bookId, playlistsFromServer.PLAYLISTS[i].books)>-1){
@@ -55,8 +63,32 @@ bookBoxApp.controller("addToPlaylistDialogCtrl",["$scope","$location","$route","
                             
                         }).error(function(error){error.errorMsg});
                     }
+                    
+                    $scope.createPlaylist=function(playlistName){debugger;
+                        if(playlistName==""){
+                            alert("Please enter the Playlist name");
+                        }
+                        else{
+                            var jsonString=JSON.stringify({name:playlistName, userId:$scope.currentUserId});
+                            addToPlaylistDialogService.createPlaylist(jsonString).
+                            success(function(result){debugger;
+                                addToPlaylistService.getPlaylistForUser($scope.currentUserId,$scope.currentUser).
+                                success(function(playlists){debugger;
+                                  addToPlaylistDialogService.setPlaylists(playlists); 
+                                  $scope.init();
+                                  $scope.showForm=false;
+                                }).
+                                error(function(error){alert("Error!");});
+                            }).error(function(error){error.errorMsg});
+                        }
+                        
+                    }
+                    
+                    $scope.showPlaylistForm=function(){
+                        $scope.showForm=true;
+                    }
                     $scope.init=function(){
-                        $scope.createPlaylistArray($scope.book, $scope.playlists);
+                        $scope.createPlaylistArray($scope.book,  addToPlaylistDialogService.getPlaylists());
                     }
                     
                     $scope.init();

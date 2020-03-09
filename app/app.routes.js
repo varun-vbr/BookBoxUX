@@ -28,5 +28,13 @@
         .when("/categoryListing",{
             templateUrl:"/BookBox/BookBoxUX/app/components/categoryListingPage/categoryListingPage.html",
             controller:"categoryListingCtrl"
+        })
+        .when("/playlists",{
+            templateUrl:"/BookBox/BookBoxUX/app/components/playlists/playlists.html",
+            controller:"playlistsCtrl"
+        })
+        .when("/history",{
+            templateUrl:"/BookBox/BookBoxUX/app/components/history/history.html",
+            controller:"historyCtrl"
         });
     })

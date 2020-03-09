@@ -10,12 +10,13 @@
                 $scope.selectedItem;
                 $scope.selectedType='None';
                 $scope.userInfo;
+               
 
                 $scope.getUserInfo=function(){debugger;
                     anonymousService.getAnonymousUserInfo().
                     success(function (users) {debugger
                         $scope.userInfo = users;
-                        userManagementService.setCurrentUser(users.user);                      
+                        userManagementService.setCurrentUser(users.user);                    
                         $scope.popularBooks=users.popularBooks;
                         $scope.newBooks=users.newBooks;
                         $scope.trendingBooks=users.trendingBooks;

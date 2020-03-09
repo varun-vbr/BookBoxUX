@@ -3,7 +3,7 @@
                 this.userInfo;
                 var anonymousService = {};
                 anonymousService.getAnonymousUserInfo=function(){
-                        return $http.get("http://localhost:8081/BookBoxAPI/users/anonymous");    
+                        return $http.get("http://localhost:8081/BookBoxAPI/users/anonymous", {headers:{'Cache-Control': 'no-cache'}});    
                 }
                  return anonymousService;
 

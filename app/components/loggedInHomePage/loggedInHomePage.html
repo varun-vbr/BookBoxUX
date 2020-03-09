@@ -14,10 +14,11 @@
                                  <span class="truncate">{{item.title}}</span>
                                  <md-tooltip md-direction="bottom">{{item.title}}</md-tooltip>
                              </div>
-                             <div class="carousal-template-author-div">
+                             <div class="carousal-template-author-div" style="display:inline;">
                                  <span>{{item.author}}</span>
                              </div>
                           </a>
+                          <span><add-to-playlist style="float:right; margin-bottom: 10px;" ng-if="currentUser != ''"  user-id="currentUserId" book="item" user-name="currentUser" ></add-to-playlist></span>
         </script>
         
          <h3 class="section-heading">Reading Suggestions</h3>

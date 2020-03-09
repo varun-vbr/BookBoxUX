@@ -10,7 +10,7 @@
         }
         
          anonymousBookService.getReviewCountFromServer=function(bookId){
-            return $http.get("http://localhost:8081/BookBoxAPI/review/reviewCount/"+bookId);    
+            return $http.get("http://localhost:8081/BookBoxAPI/review/reviewCount/"+bookId, {headers:{'Cache-Control': 'no-cache'}});    
         }
          
          anonymousBookService.setReviewCount=function(count){
@@ -22,7 +22,7 @@
          }
          
          anonymousBookService.getReviewsForBook=function(bookId){
-            return $http.get("http://localhost:8081/BookBoxAPI/review/allReviews/"+bookId);
+            return $http.get("http://localhost:8081/BookBoxAPI/review/allReviews/"+bookId, {headers:{'Cache-Control': 'no-cache'}});
          }
          
 

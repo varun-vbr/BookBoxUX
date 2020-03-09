@@ -1,0 +1,42 @@
+<anonymous-header></anonymous-header>
+<div style="display:inline-block; position:relative; width:100vw; height:100vh;">
+    <logged-in-navbar style="position:absolute;height:100%;" current-selection="2"></logged-in-navbar>
+    <search-box style="justify-content: center" selected-type="selectedType" search-text="searchText" selected-item="selectedItem"></search-box>
+    <h2 class="title" style="margin-left: 70px;">Playlists</h2>
+    <div style="margin-left: 28px;" class="row">
+        <div class="col-sm-3" style="padding-right: 0px; height:500px; overflow-y: scroll">
+            <ul style="list-style:none;">
+                <li ng-repeat="playlist in allPlaylists" class="highlight" ng-click="playlistSelListener($index, playlist)" ng-class={select:playlist.selected} style="height:50px; padding-top: 12px;text-align:center; width:100%;border-top: 0.5px solid #CCCC; border-bottom: 0.5px solid #CCCC">{{playlist.playListName}}</li>
+            </ul>
+        </div>
+        <div class="col-sm-8" style="padding-left: 0px; border: 1px solid #7d7d7d;background: #F2F2F2; height:500px;overflow-y: scroll">
+            <ul style="list-style:none;padding-left: 0px;">
+                <li ng-repeat="book in playlistBooks">
+                    <div class="row" style="background: white; margin: 30px;">
+                    <div class="col-sm-2 bookImg">
+                        <div class="d-flex justify-content-center">
+                            <img alt="playlistBook" ng-src="/BookBox/BookBoxUX/assets/img/bookCovers{{book.localImageUrl}}" height="150" width="100"> 
+                        </div>
+                         
+                    </div>
+                    <div class="col-sm-9 detailsCol">
+                        <div class="row">
+                            <a href="" class="links" style="font-size:large" ng-click="gotoBookPage(book)">{{book.title}}</a>
+                        </div> 
+                         
+                         <div class="row">
+                             <p class="bookLabel" style="font-size: small">By:</p>
+                             <span><a href="" class="links" style="font-size: small" ng-click="goToAuthorPage(book.author)">{{book.author}}</a></span>
+                        </div> 
+                        <div class="row" style="float:right">
+                            <a href="" style="margin-top: 40px;" ng-click="deleteBook(book)"><img alt="delete" ng-src="/BookBox/BookBoxUX/assets/img/icons/delete.png" width="32" height="32"></a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+</div>

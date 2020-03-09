@@ -22,5 +22,9 @@ bookBoxApp.service("addToPlaylistDialogService",['$http',function($http){
     addToPlaylistDialogService.removeFromPlaylist=function(jsonString){
         return $http.post('http://localhost:8081/BookBoxAPI/actions/playlists/books/remove', jsonString);
     }
+    
+    addToPlaylistDialogService.createPlaylist=function(jsonString){
+        return $http.post('http://localhost:8081/BookBoxAPI/actions/playlists/create', jsonString);
+    }
     return addToPlaylistDialogService;
 }])

@@ -3,12 +3,12 @@
   <form ng-cloak>
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <h2>Add to</h2>
+        <h2>Add to Playlist</h2>
       </div>
     </md-toolbar>
     <md-dialog-content>
       <div style="width:200px;height:410px;">
-         <div ng-repeat="item in playlistArray" class="d-flex justify-content-center custom-checkbox-fill">
+         <div ng-repeat="item in playlistArray" style="margin-left: 20px;" class="custom-checkbox-fill">
             <md-checkbox ng-model="item.checked" aria-label="item.name" style="margin-top:10px" ng-change="toggleToPlaylist(item.checked, item.id)">
                             {{item.name}}
             </md-checkbox>
@@ -17,9 +17,16 @@
               
       </div>   
     </md-dialog-content>
-    <md-dialog-actions layout="row">
+    <md-dialog-actions layout="column">
       <div class="">
-            <a href="" class="btn btn-success">Create a Playlist</a>
+            <a href="" class="btn btn-success" ng-if="!showForm" ng-click="showPlaylistForm()" style="margin-bottom: 20px;margin-top: 20px;">Create a Playlist</a>
+            <div ng-if="showForm" style="margin-bottom: 20px;margin-top: 20px;">
+                <md-input-container>
+                <label>Playlist Name</label>
+                <input ng-model="playlistName">
+                </md-input-container>
+                <a href="" class="btn btn-success" ng-click="createPlaylist(playlistName)" style="display: block">Create</a>
+            </div>
       </div>
     </md-dialog-actions>
   </form>
