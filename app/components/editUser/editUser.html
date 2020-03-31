@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <style>
+            .page-background-edit{
+               background:linear-gradient(rgba(102, 102, 102, 0.7), rgba(102, 102, 102, 0.7)), url(/BookBox/BookBoxUX/assets/img/logos/bookcase-books-bookshelf.jpg) no-repeat center center fixed;           
+               background-size: cover;
+               height:100vh;
+               overflow: hidden;
+               z-index:-2;    
+               
+              }
+            .md-select-value .md-text {
+                display: inline;
+                color: #FFF;
+            }
+            .md-select-value .md-select-icon:after {
+                color:#FFF;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page-background-edit" style="overflow-y: scroll;">
+        
+            <div  style="margin-top: 5px;">
+                <div class="row d-flex justify-content-center">
+                    <a href="/BookBox/BookBoxUX/#/loggedin" ><img src="/BookBox/BookBoxUX/assets/img/logos/bookbox_logo2.png"  width="160" height="60" ></a>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <h3 style="color:#fff;">Sign up for Book Box</h3>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <p style="color:#fff;">Edit your Account details</p>
+                </div>
+                <div class="row d-flex justify-content-center custom">
+                            <md-input-container>
+                                <label>Name</label>
+                                <input ng-model="name" autofocus required>
+                            </md-input-container>
+                </div> 
+                <div class="row d-flex justify-content-center custom">
+                            <md-input-container>
+                                <label>Email</label>
+                                <input ng-model="email"  required>
+                            </md-input-container>
+                </div>
+                <div class="row d-flex justify-content-center custom">
+                            <md-input-container>
+                                <label>Credit Card</label>
+                                <input ng-model="creditCard"  required>
+                            </md-input-container>
+                </div>
+                <div class="row d-flex justify-content-center custom" style="margin-right: 161px;">
+                   <md-input-container>
+                        <label>Plan</label>
+                        <md-select  ng-model="plan">
+                              <md-option value="Elite">Elite</md-option>
+                              <md-option value="Premium">Premium</md-option>
+                              <md-option value="Basic">Basic</md-option>
+                        </md-select> 
+                    </md-input-container>  
+                    
+                  </div>
+                <div class="row d-flex justify-content-center custom" style="margin-right: 40px;">
+                   <md-input-container>
+                        <label>Payment Type</label>
+                        <md-select  ng-model="paymentType">
+                              <md-option value="Yearly">Yearly- Pay Every Year</md-option>
+                              <md-option value="Bi-Annual">Bi-Annual- Pay Every 6 Months</md-option>
+                              <md-option value="Monthly">Monthly- Pay Every Month</md-option>
+                              <md-option value="Fortnightly">Fortnightly- Pay Every 15 Days</md-option>
+                        </md-select> 
+                    </md-input-container>  
+                  </div>
+                <div ng-if="!passwordReset" class="row d-flex justify-content-center">
+                    <a href="" ng-click="setPasswordResetTrue()" class="bb-header-hyperlinks">Change Password</a>
+                </div>
+                <div ng-if="passwordReset">
+                    <div class="row d-flex justify-content-center custom">
+                            <md-input-container>
+                                <label>Old Password</label>
+                                <input ng-model="passwords.oldPwd" type=password>
+                            </md-input-container>
+                </div> 
+                <div class="row d-flex justify-content-center custom">
+                            <md-input-container>
+                                <label>New Password</label>
+                                <input ng-model="passwords.newPwd" type=password>
+                            </md-input-container>
+                </div>
+                <div class="row d-flex justify-content-center custom">
+                            <md-input-container>
+                                <label>Confirm Password</label>
+                                <input ng-model="passwords.confirmedPwd" type=password>
+                            </md-input-container>
+                </div>
+                </div>
+                <div class="row d-flex justify-content-center" style="margin-top: 15px;">
+                        <a href="" class="btn btn-success" 
+                           ng-click="saveUserDetails(name,email,creditCard,plan,paymentType,passwords.oldPwd,passwords.newPwd,passwords.confirmedPwd)">Save</a>
+                </div>
+                 
+            </div>
+        
+        </div>
+    
+    </body>
+
+</html>

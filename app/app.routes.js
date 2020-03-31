@@ -36,5 +36,13 @@
         .when("/history",{
             templateUrl:"/BookBox/BookBoxUX/app/components/history/history.html",
             controller:"historyCtrl"
+        })
+        .when("/settings",{
+            templateUrl:"/BookBox/BookBoxUX/app/components/settings/settings.html",
+            controller:"settingsCtrl"
+        })
+        .when("/editUser",{
+            templateUrl:"/BookBox/BookBoxUX/app/components/editUser/editUser.html",
+            controller:"editUserCtrl"
         });
     })
