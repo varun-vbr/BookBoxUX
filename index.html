@@ -33,7 +33,7 @@
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
             <!--<link href="/BookBox/BookBoxUX/assets/css/bootstrap.css" rel="stylesheet" type="text/css" /> -->
             <link href="https://unpkg.com/ionicons@4.5.9-1/dist/css/ionicons.min.css" rel="stylesheet">
-            
+            <script src = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.4.456/pdf.js"></script>
             <!-- ----------------------------Vendor Scripts and CSS Ends--------------------------------------------------------->
             
             <!-- ----------------------------Custom CSS--------------------------------------------------------->
@@ -100,12 +100,14 @@
             <script src="/BookBox/BookBoxUX/app/components/settings/settingsService.js"></script>
             <script src="/BookBox/BookBoxUX/app/components/editUser/editUserController.js"></script>
             <script src="/BookBox/BookBoxUX/app/components/editUser/editUserService.js"></script>
+            <script src="/BookBox/BookBoxUX/app/components/bookReader/bookReaderController.js"></script>
+            <script src="/BookBox/BookBoxUX/app/components/bookReader/bookReaderService.js"></script>
             <!-- ----------------------------Custom Scripts Ends--------------------------------------------------------->
           <style>
           </style>
 
         </head>
         <body ng-app="bookBoxApp" style="height: auto">
-            <div ng-view></div>
+            <div ng-view style="margin:0px;padding:0px"></div>
         </body>
     </html>

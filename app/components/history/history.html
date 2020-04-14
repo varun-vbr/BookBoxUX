@@ -36,7 +36,7 @@
                                     <star-rating max="5" rating-value="currentBook.book.averageRating"  read-only="true"></star-rating>
                                     <a href="" style="font-size: small; margin-bottom: 2px;" class="links" ng-click="showUserReviewDialog($event, currentBook.book)">{{currentBook.book.reviewCount}} REVIEWS</a>
                                     <div class="row" style="margin:42px;">
-                                        <a href="" class="btn btn-success">CONTINUE</a>
+                                        <a href="" ng-click="continueReading(currentBook.book)" class="btn btn-success">CONTINUE</a>
                                     </div>
                                 </div>
                                 <div class="col-sm-1" style="margin-top:15px;">

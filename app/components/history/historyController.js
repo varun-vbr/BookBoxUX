@@ -8,7 +8,8 @@
                            'anonymousUserDialogService',
                            'searchBoxService',
                            'anonymousCategoryService',
-                           function($scope,$location,$mdDialog, historyService,userManagementService,anonymousBookService,anonymousUserDialogService,searchBoxService,anonymousCategoryService){
+                           'bookReaderService',
+                           function($scope,$location,$mdDialog, historyService,userManagementService,anonymousBookService,anonymousUserDialogService,searchBoxService,anonymousCategoryService,bookReaderService){
                                $scope.searchText;
                                $scope.selectedItem;
                                $scope.selectedType='None';
@@ -57,6 +58,11 @@
                                      $location.path("/categories");
                                  }).
                                  error(function(error){alert("Error!");});
+                             }
+                              
+                             $scope.continueReading=function(book){
+                                 bookReaderService.setBookToRead(book);
+                                 $location.path("/bookReader");
                              }
                                
                                

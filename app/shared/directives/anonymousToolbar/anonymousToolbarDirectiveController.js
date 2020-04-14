@@ -50,6 +50,12 @@ bookBoxApp.controller("anonymousHeaderCtrl",
                                   }
                               }
                               
+                              $scope.signIn=function(){
+                                  userManagementService.setUserBook(undefined);
+                                  userManagementService.setUserPath(undefined);
+                                  $location.path("/login");
+                              }
+                              
                               $scope.init=function(){
                                var userInfo= userManagementService.getCurrentUser();
                                   if(userInfo){

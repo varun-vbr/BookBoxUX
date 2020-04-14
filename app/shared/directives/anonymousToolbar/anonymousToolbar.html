@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 <div class="col-xs-1" ng-hide="currentUser != ''">
-                    <a id="signIn" href="/BookBox/BookBoxUX/#/login" class="float-right bb-header-hyperlinks">Sign In</a>    
+                    <a id="signIn" href="" ng-click="signIn()" class="float-right bb-header-hyperlinks">Sign In</a>    
                 </div>
                 <div class="col-xs-1 username" ng-hide="currentUser == ''">
                     <img src="/BookBox/BookBoxUX/assets/img/icons/User.png" width="32" height="32"/><span style="color:white">{{currentUser}}</span>    

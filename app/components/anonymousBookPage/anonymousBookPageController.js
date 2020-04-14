@@ -10,7 +10,8 @@
         'anonymousCategoryService',
         'anonymousToolBarService',
         'anonymousUserDialogService',
-    function($scope,$location,$route,$mdDialog,anonymousBookService,userManagementService,searchBoxService,anonymousCategoryService, anonymousToolBarService,anonymousUserDialogService){
+        'bookReaderService',
+    function($scope,$location,$route,$mdDialog,anonymousBookService,userManagementService,searchBoxService,anonymousCategoryService, anonymousToolBarService,anonymousUserDialogService,bookReaderService){
          $scope.searchText;
          $scope.selectedItem;
          $scope.selectedType='None';
@@ -79,5 +80,18 @@
              error(function(error){alert("Error!");});
                 
        };
+        
+       $scope.goToBookReaderPage=function(){debugger;
+           if($scope.currentUser!=""){
+               bookReaderService.setBookToRead($scope.bookOnDisplay);
+               $location.path("/bookReader");
+           }
+           else{
+               userManagementService.setUserBook($scope.bookOnDisplay);
+               userManagementService.setUserPath("/bookReader");
+               $location.path("/login");
+           }
+           
+       }    
          $scope.init();
     }])

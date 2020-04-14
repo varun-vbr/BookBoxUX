@@ -44,5 +44,9 @@
         .when("/editUser",{
             templateUrl:"/BookBox/BookBoxUX/app/components/editUser/editUser.html",
             controller:"editUserCtrl"
+        })
+        .when("/bookReader",{
+            templateUrl:"/BookBox/BookBoxUX/app/components/bookReader/bookReader.html",
+            controller:"bookReaderCtrl"
         });
     })

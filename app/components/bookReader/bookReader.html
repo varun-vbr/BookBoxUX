@@ -1,0 +1,23 @@
+<html>
+        <head>
+            <style>
+            </style>
+        </head>
+        <body>
+            <div style="display:inline-block; position:relative; width:100vw;height:100%">
+                <logged-in-navbar style="position:absolute;min-height: 100vh;margin-top: -15px;"></logged-in-navbar>
+                <div class="row" style="height:70px; position:fixed; margin-left: 70px;width:100vw;background:linear-gradient(rgba(250, 250, 250, 0.7), rgba(250, 250, 250, 0.7))">
+                    <div class="col-sm-2 d-flex align-items-center justify-content-center" style="border-right: 1px solid #CCC">
+                        <a href="" ng-click="previous()" ><img src="/BookBox/BookBoxUX/assets/img/icons/previous.png" width="32" height="32"/></a>
+                    </div>
+                    <div class="col-sm-7 d-flex align-items-center justify-content-center" style="border-right: 1px solid #CCC">
+                        {{bookToRead.title}}
+                    </div>
+                    <div class="col-sm-2 d-flex align-items-center justify-content-center">
+                        <a href="" ng-click="next()" ><img src="/BookBox/BookBoxUX/assets/img/icons/next.png" width="32" height="32"/></a>
+                    </div>
+                </div>
+                <canvas id="book-canvas" width="1280" style="margin-left: 70px;margin-top: 70px;"></canvas>
+            </div>
+        </body>
+    </html>
